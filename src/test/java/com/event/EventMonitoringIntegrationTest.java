@@ -146,7 +146,7 @@ public class EventMonitoringIntegrationTest {
 
 		// Test #1: Check Kafka Health
 		System.out.println("\n----- Testing Kafka Health -----");
-		String healthResponse = mockMvc.perform(get("/kafka-health"))
+		String healthResponse = mockMvc.perform(get("/health"))
 				.andDo(print())
 				.andExpect(status().isOk())
 				.andExpect(jsonPath("$.status").value("UP"))
